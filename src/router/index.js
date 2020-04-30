@@ -4,6 +4,7 @@ import Login from '@/components/Login.vue'
 import Customers from '@/components/Customers.vue'
 import Home from '../views/Home.vue'
 import store from '@/store.js'
+import AddCustomer from '@/components/AddCustomer.vue'
 
 Vue.use(VueRouter)
 
@@ -16,7 +17,13 @@ Vue.use(VueRouter)
   {
     path: '/customers',
     name: 'Customers',
-    component: Customers
+    component: Customers,
+    
+    children: [{
+      path: '/create',
+      name: 'AddCustomer',
+      component: AddCustomer
+    }]
   },
   {
     path: '/',
