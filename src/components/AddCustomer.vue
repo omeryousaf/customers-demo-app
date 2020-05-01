@@ -89,7 +89,7 @@
 <style scoped lang="scss">
 	.label-value-pair {
 		display: flex;
-		justify-content: start;
+		justify-content: flex-start;
 		align-items: center;
 		margin: 15px 0;
 

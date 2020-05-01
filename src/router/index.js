@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Login from '@/components/Login.vue'
 import Customers from '@/components/Customers.vue'
 import Home from '../views/Home.vue'
-import store from '@/store.js'
+import store from '@/store'
 import AddCustomer from '@/components/AddCustomer.vue'
 import ViewCustomer from '@/components/ViewCustomer.vue'
 import ContactUs from '@/components/ContactUs.vue'
@@ -59,7 +59,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   const isLoggedIn = store.state.isLoggedIn;
-  console.log(`store.state.isLoggedIn: ${store.state.isLoggedIn}`);
+  // console.log(`store.state.isLoggedIn: ${store.state.isLoggedIn}`);
   if (to.name !== 'Login' && !isLoggedIn) {
     next({ name: 'Login' });
   }
