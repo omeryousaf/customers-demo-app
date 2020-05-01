@@ -104,11 +104,12 @@
 		padding: 5px 1rem;
 		border-radius: 5px;
 		color: #fff;
+		font-size: 15px;
 		&.add {
-			background-color: green;
+			background-color: slateblue;
 		}
 		&.cancel {
-			background-color: grey;
+			background-color: lightcoral;
 		}
 	}
 	.align-right {

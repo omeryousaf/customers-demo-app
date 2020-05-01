@@ -89,6 +89,7 @@
 		padding: 5px 1rem;
 		border-radius: 5px;
 		color: #fff;
-		background-color: grey;
+		background-color: lightcoral;
+		font-size: 15px;
 	}
 </style>

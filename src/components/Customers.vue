@@ -70,7 +70,8 @@
 		margin-right: 1rem;
 		padding: 5px 1rem;
 		border-radius: 5px;
+		font-size: 15px;
 		color: #fff;
-		background-color: grey;
+		background-color: slateblue;
 	}
 </style>
