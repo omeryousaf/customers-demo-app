@@ -2,7 +2,7 @@
 	<Modal>
 		<template v-slot:header>
 			<h3>
-				Add New Customer
+				Customer Details
 			</h3>
 		</template>
 		<template v-slot:body>
@@ -11,58 +11,46 @@
 				<span>
 					Name
 				</span>
-				<input type="text" name="" v-model="name">
+				<h4>{{customer.name}}</h4>
 			</div>
 			<div class="label-value-pair">
 				<span>
 					Email
 				</span>
-				<input type="text" name="" v-model="email">
+				<h4>{{customer.email}}</h4>
 			</div>
 			<div class="label-value-pair">
 				<span>
 					Phone
 				</span>
-				<input type="text" name="" v-model="phone">
+				<h4>{{customer.phone}}</h4>
 			</div>
 		</template>
 		<template
 			v-slot:footer
 			>
-			<button @click="close">Cancel</button>
-			<button @click="onAdd">Add</button>
+			<button @click="close">Close</button>
 		</template>
 	</Modal>
 </template>
 
 <script type="text/javascript">
 	import Modal from '@/components/Modal';
-	import { mapState } from 'vuex';
 
 	export default {
-		name: 'AddCustomer',
+		name: 'ViewCustomer',
 		components: {
 			Modal
 		},
-		computed: mapState(['newCustomerId']),
 		data() {
 			return {
-				name: '',
-				email: '',
-				phone: ''
-			}
+				customer: {}
+			};
+		},
+		created() {
+			this.customer = this.$store.getters.fetchCustomer(this.$route.params.id) || {};
 		},
 		methods: {
-			onAdd() {
-				this.$store.commit('addToCustomers', {
-					id: this.newCustomerId,
-					name: this.name,
-					email: this.email,
-					phone: this.phone
-				});
-				this.$store.commit('incrementCustomerId');
-				this.$router.push({name: 'Customers'});
-			},
 			close() {
 				this.$router.push({name: 'Customers'});
 			}
@@ -73,12 +61,9 @@
 <style scoped lang="scss">
 	.label-value-pair {
 		display: flex;
-		justify-content: center;
+		align-items: center;
 		& span {
 			width: 70px;
 		}
-	}
-	button {
-		margin-right: 1rem;
 	}
 </style>

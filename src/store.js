@@ -28,6 +28,14 @@ const store = new Vuex.Store({
     incrementCustomerId(state) {
       state.newCustomerId++;
     }
+  },
+  getters: {
+    fetchCustomer(state) {
+      return function(id) {
+        const matchedCustomers = state.customers.filter(customer => customer.id === id);
+        return matchedCustomers.length ? matchedCustomers[0] : '';
+      }
+    }
   }
 });
 

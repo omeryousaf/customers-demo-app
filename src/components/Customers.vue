@@ -27,11 +27,10 @@
 			<div>{{ customer.email }}</div>
 			<div>{{ customer.phone }}</div>
 			<div>
-				<a
-					href="/customers/customer.id"
-					@click="onViewCustomer">
+				<router-link
+					:to="{name: 'ViewCustomer', params: { id: customer.id }}">
 					View
-				</a>
+				</router-link>
 			</div>
 		</div>
 		<router-view/>
