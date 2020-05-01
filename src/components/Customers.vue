@@ -7,7 +7,10 @@
 			</h1>
 			<div>
 				<button
-					@click="onAddCustomer">Create</button>
+					@click="onAddCustomer"
+					class="btn">
+					Create
+				</button>
 			</div>
 		</div>
 		<div
@@ -43,26 +46,9 @@
 	export default {
 		name: 'Customers',
 		computed: mapState(['customers']),
-		mounted() {
-			console.log('customers mounted..');
-		},
-		data() {
-			return {
-				forAddCustomer: false,
-				forViewCustomer: false,
-				showModal: false
-			}
-		},
 		methods: {
-			onViewCustomer() {
-				// open child 
-			},
 			onAddCustomer() {
 				this.$router.push({name: 'AddCustomer'});
-			},
-			onCloseModal() {
-				this.forAddCustomer = false;
-				this.forViewCustomer = false;
 			}
 		}
 	}
@@ -79,5 +65,12 @@
 		& :last-child {
 			align-self: center;
 		}
+	}
+	.btn {
+		margin-right: 1rem;
+		padding: 5px 1rem;
+		border-radius: 5px;
+		color: #fff;
+		background-color: grey;
 	}
 </style>

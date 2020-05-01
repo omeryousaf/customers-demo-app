@@ -1,8 +1,8 @@
 <template>
-	<div>
-		<TopNav/>
-		<SideNav/>
-		<Content/>
+	<div class="layout">
+		<TopNav class="top"/>
+		<SideNav class="side"/>
+		<Content class="main"/>
 	</div>
 </template>
 
@@ -20,3 +20,25 @@
     }
 	}
 </script>
+
+<style scoped lang="scss">
+	.top {
+		grid-area: t;
+		background-color: lightblue;
+	}
+	.side {
+		grid-area: s;
+		background-color: lightgreen;
+	}
+	.main {
+		grid-area: m;
+	}
+	.layout {
+		display: grid;
+		grid-template-columns: 150px auto;
+		grid-template-rows: 50px auto;
+		grid-template-areas:'t t'
+												's m';
+		height: 100vh;
+	}
+</style>

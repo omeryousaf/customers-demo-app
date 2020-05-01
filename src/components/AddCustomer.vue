@@ -11,26 +11,42 @@
 				<span>
 					Name
 				</span>
-				<input type="text" name="" v-model="name">
+				<input
+					type="text"
+					v-model="name">
 			</div>
 			<div class="label-value-pair">
 				<span>
 					Email
 				</span>
-				<input type="text" name="" v-model="email">
+				<input
+					type="text"
+					v-model="email">
 			</div>
 			<div class="label-value-pair">
 				<span>
 					Phone
 				</span>
-				<input type="text" name="" v-model="phone">
+				<input
+					type="text"
+					v-model="phone">
 			</div>
 		</template>
 		<template
 			v-slot:footer
 			>
-			<button @click="close">Cancel</button>
-			<button @click="onAdd">Add</button>
+			<div class="align-right">
+				<button
+					@click="close"
+					class="btn cancel mr_1Rem">
+					Cancel
+				</button>
+				<button
+					@click="onAdd"
+					class="btn add">
+					Add
+				</button>
+			</div>
 		</template>
 	</Modal>
 </template>
@@ -73,12 +89,32 @@
 <style scoped lang="scss">
 	.label-value-pair {
 		display: flex;
-		justify-content: center;
+		justify-content: start;
+		align-items: center;
+		margin: 15px 0;
+
 		& span {
 			width: 70px;
 		}
+		& input {
+			font-size: 16px;
+		}
 	}
-	button {
+	.btn {
+		padding: 5px 1rem;
+		border-radius: 5px;
+		color: #fff;
+		&.add {
+			background-color: green;
+		}
+		&.cancel {
+			background-color: grey;
+		}
+	}
+	.align-right {
+		text-align: end;
+	}
+	.mr_1Rem {
 		margin-right: 1rem;
 	}
 </style>

@@ -1,6 +1,6 @@
 <template>
 	<div class="flex">
-		<div>logo</div>
+		<img class="logo" src="../assets/logo.png">
 		<Logout/>
 	</div>
 </template>
@@ -19,5 +19,9 @@
 	.flex {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
+	}
+	.logo {
+		max-width: 40px;
 	}
 </style>

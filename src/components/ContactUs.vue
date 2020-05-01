@@ -1,6 +1,7 @@
 <template>
 	<div>
-		<img src="../assets/logo.png">
+		<img
+			src="../assets/logo.png">
 		<h1>Contact Us</h1>
 		<div>
 			<p>
@@ -22,7 +23,3 @@
 		</div>
 	</div>
 </template>
-
-<style scoped lang="scss">
-	
-</style>

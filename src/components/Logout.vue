@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="mr_1Rem">
 		<a to="#" @click="onLogout">Logout</a>
 	</div>
 </template>
@@ -16,3 +16,12 @@
 		}
 	}
 </script>
+
+<style scoped>
+	a {
+		cursor: pointer;
+	}
+	.mr_1Rem {
+		margin-right: 1rem;
+	}
+</style>
