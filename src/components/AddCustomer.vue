@@ -43,7 +43,8 @@
 				</button>
 				<button
 					@click="onAdd"
-					class="btn add">
+					class="btn add"
+					data-test-submit="add-customer">
 					Add
 				</button>
 			</div>
