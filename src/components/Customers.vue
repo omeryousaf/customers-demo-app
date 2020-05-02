@@ -31,7 +31,7 @@
 			<div>{{ customer.phone }}</div>
 			<div>
 				<router-link
-					:to="{name: 'ViewCustomer', params: { id: customer.id }}">
+					:to="{name: 'CustomerDetails', params: { id: customer.id }}">
 					View
 				</router-link>
 			</div>

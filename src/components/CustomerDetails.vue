@@ -48,7 +48,7 @@
 	import Modal from '@/components/Modal';
 
 	export default {
-		name: 'ViewCustomer',
+		name: 'CustomerDetails',
 		components: {
 			Modal
 		},
